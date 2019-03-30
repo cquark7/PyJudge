@@ -1,8 +1,8 @@
-from bottle import Bottle, run, template, static_file, request, route, redirect
 import os
-import sys
 import datetime
 from collections import defaultdict, namedtuple
+
+from bottle import Bottle, run, template, static_file, request, redirect
 
 path = os.path.abspath(__file__)
 dir_path = os.path.dirname(path)
@@ -27,7 +27,7 @@ for i in os.listdir(question_dir):
 
 
 @app.route('/')
-def changePath():
+def change_path():
     return redirect("/question/1")
 
 
