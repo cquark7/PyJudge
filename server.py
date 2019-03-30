@@ -25,9 +25,11 @@ for i in os.listdir(question_dir):
         statement = fl.read()
     questions[i] = Question(output=output, statement=statement)
 
+
 @app.route('/')
 def changePath():
-	redirect("/question/1")
+    return redirect("/question/1")
+
 
 @app.get('/question/<number>')
 def question(number):
@@ -63,5 +65,5 @@ def file_upload(number):
     else:
         return "Solved! Great Job! "
 
-                                                            
+
 run(app, host='localhost', port=8080)
